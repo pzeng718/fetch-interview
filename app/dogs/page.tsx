@@ -4,7 +4,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useAuth } from "../../context/AuthContext";
 import { ArrowLeftOutlined, LikeOutlined, LikeFilled } from "@ant-design/icons";
 
-import { Card, List, Spin, Typography, Button, Pagination, Select } from "antd";
+import { Card, List, Typography, Button, Pagination, Select } from "antd";
 import LoginForm from "@/components/LoginForm";
 import axios from "axios";
 
