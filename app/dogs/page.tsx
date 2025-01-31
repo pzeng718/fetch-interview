@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useAuth } from "../../context/AuthContext";
 import { ArrowLeftOutlined, LikeOutlined, LikeFilled } from "@ant-design/icons";
@@ -21,7 +21,7 @@ interface Dog {
   breed: string;
 }
 
-export default function DogsPage() {
+function DogsPage() {
   const { isAuthenticated, logout } = useAuth();
 
   const searchParams = useSearchParams();
@@ -152,4 +152,12 @@ export default function DogsPage() {
     </div>
     : <LoginForm />
   );
+}
+
+export default function Page() {
+  return (
+    <Suspense>
+      <DogsPage />
+    </Suspense>
+  )
 }
